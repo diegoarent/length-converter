@@ -2,7 +2,7 @@
     "name": "diegoarent/length-converter",
     "description": "Length Converter",
     "type": "library",
-    "license": "creative commons",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Diego Gonçalves Arent"
