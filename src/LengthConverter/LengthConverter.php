@@ -1,4 +1,7 @@
 <?php
+/**
+ * Length Converter
+ */
 
 declare(strict_types = 1);
 
@@ -12,10 +15,10 @@ namespace LengthConverter;
  * echo $converter->from('inchs')->to('cm')->show();
  * echo $converter->from('m')->to('mm')->show(0, ',', '.');
  *
- * @author  Diego Gonçalves Arent
- * @link    http://github.com/diegoarent
  * @package LengthConverter
- * @version 1.0
+ * @author  Diego Gonçalves Arent
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link    http://github.com/diegoarent
  * @access  public
  */
 class LengthConverter
@@ -37,27 +40,21 @@ class LengthConverter
         'miles' => 1609.34
     ];
 
-    /*
-     * Value (from)
-     */
-    private $value;
-
-    /*
-     * Unit from
-     */
-    private $unitFrom;
-
     /**
-     * @var
+     * Converter attributes
+     *
+     * @var string $value    Original value
+     * @var float  $unitFrom Unit ratio (from)
+     * @var float  $unitTo   Unit ratio (to)
      */
-    private $unitTo;
+    private $value, $unitFrom, $unitTo;
 
 
     /**
      * LengthConverter constructor
      * Set the value that to be converted
      *
-     * @param float $value
+     * @param float $value Original value
      */
     public function __construct(float $value)
     {
@@ -131,8 +128,7 @@ class LengthConverter
         $calc = 0.0;
 
         // If valid units
-        if (!empty($this->unitFrom)
-            && !empty($this->unitTo)) :
+        if (!empty($this->unitFrom) && !empty($this->unitTo)) :
             $calc = $this->value * $this->unitFrom * (1 / $this->unitTo);
         endif;
 
