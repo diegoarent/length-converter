@@ -16,10 +16,5 @@
         "psr-0": {
             "LengthConverter": "src/"
         }
-    },
-    "require-dev": {
-        "edgedesign/phpqa": "dev-master",
-        "vimeo/psalm": "*",
-        "jakub-onderka/php-parallel-lint": "*"
     }
 }
